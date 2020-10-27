@@ -16,7 +16,7 @@ let EmojiThemes = [EmojiTheme(name: "Halloween", showAllCards: false, emojis: ["
 class EmojiMemoryGame: ObservableObject {
     @Published private var model: MemoryGame<String>
     
-    var theme: EmojiTheme
+    private(set) var theme: EmojiTheme
 
     init(){
         let randomThemeIdx = Int.random(in: 0..<EmojiThemes.count)
