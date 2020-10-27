@@ -16,6 +16,7 @@
 		603AEE1C2548568A00CFC098 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE1B2548568A00CFC098 /* EmojiMemoryGame.swift */; };
 		603AEE1F254856B200CFC098 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE1E254856B200CFC098 /* EmojiMemoryGameView.swift */; };
 		603AEE22254856E800CFC098 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE21254856E800CFC098 /* Grid.swift */; };
+		603AEE2625485D4300CFC098 /* EmojiTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE2525485D4300CFC098 /* EmojiTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		603AEE1B2548568A00CFC098 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		603AEE1E254856B200CFC098 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		603AEE21254856E800CFC098 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		603AEE2525485D4300CFC098 /* EmojiTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				60297AEF254854B9009165EA /* Preview Content */,
 				603AEE172548564600CFC098 /* ArrayExtensions.swift */,
 				603AEE1B2548568A00CFC098 /* EmojiMemoryGame.swift */,
+				603AEE2525485D4300CFC098 /* EmojiTheme.swift */,
 				603AEE1E254856B200CFC098 /* EmojiMemoryGameView.swift */,
 				603AEE21254856E800CFC098 /* Grid.swift */,
 			);
@@ -155,6 +158,7 @@
 			files = (
 				603AEE122548559300CFC098 /* MemoryGame.swift in Sources */,
 				603AEE1F254856B200CFC098 /* EmojiMemoryGameView.swift in Sources */,
+				603AEE2625485D4300CFC098 /* EmojiTheme.swift in Sources */,
 				603AEE22254856E800CFC098 /* Grid.swift in Sources */,
 				60297AEA254854B6009165EA /* MemorizeApp.swift in Sources */,
 				603AEE182548564600CFC098 /* ArrayExtensions.swift in Sources */,

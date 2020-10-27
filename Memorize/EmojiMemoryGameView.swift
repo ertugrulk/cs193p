@@ -18,7 +18,7 @@ struct EmojiMemoryGameView: View {
             .padding(self.cardPadding)
         }
         .padding()
-        .foregroundColor(Color.orange)
+        .foregroundColor(viewModel.theme.color)
     }
     
     // MARK: - Drawing Constants
@@ -66,6 +66,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
+        EmojiMemoryGameView(viewModel: EmojiMemoryGame( theme: EmojiTheme(name: "Halloween", amountOfCardsToBeShown: 3, emojis: ["🎃", "👻", "🕷", "🕸"], color: .orange)))
     }
 }
