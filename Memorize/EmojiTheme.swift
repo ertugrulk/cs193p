@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmojiTheme{
     var name: String
-    var amountOfCardsToBeShown: Int?
+    var showAllCards: Bool
     var emojis: [String]
     var color: Color
 }

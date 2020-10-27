@@ -11,14 +11,31 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-        Grid (viewModel.cards) { card in
-            CardView(card: card).onTapGesture {
-                    self.viewModel.choose(card: card)
+        VStack{
+            HStack {
+                Spacer()
+                Text(viewModel.theme.name)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .multilineTextAlignment(.center)
+                Spacer()
+                    .overlay( HStack{
+                        Spacer()
+                        Button("New Game") {
+                            self.viewModel.startNewGame()
+                        }
+                        .padding(.trailing)
+                    })
             }
-            .padding(self.cardPadding)
+            Grid (viewModel.cards) { card in
+                CardView(card: card).onTapGesture {
+                        self.viewModel.choose(card: card)
+                }
+                .padding(self.cardPadding)
+            }
+            .padding()
+            .foregroundColor(viewModel.theme.color)
+            Text("Score: \(viewModel.score)")
         }
-        .padding()
-        .foregroundColor(viewModel.theme.color)
     }
     
     // MARK: - Drawing Constants
@@ -66,6 +83,6 @@ struct CardView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiMemoryGameView(viewModel: EmojiMemoryGame( theme: EmojiTheme(name: "Halloween", amountOfCardsToBeShown: 3, emojis: ["🎃", "👻", "🕷", "🕸"], color: .orange)))
+        EmojiMemoryGameView(viewModel: EmojiMemoryGame())
     }
 }
