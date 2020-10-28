@@ -72,7 +72,6 @@ struct CardView: View {
                 Group{
                 if card.isConsumingBonusTime {
                     Pie(startAngle: Angle.degrees(0-90), endAngle: Angle.degrees(-animatedBonusRemaining * 360-90), clockWise: true)
-
                         .onAppear{
                             self.startBonusTimeAnimation()
                         }
