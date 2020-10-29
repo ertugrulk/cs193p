@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SetGameVM{
+class SetGameVM: ObservableObject{
     @Published private var model = SetGame() // TODO: not needed?
     
     init(){
@@ -16,13 +16,17 @@ class SetGameVM{
     //MARK:- Intents
     func createGame(){
         model = SetGame()
-        for _ in 1...12 {
-            drawCard()
+        drawCards(amount: 12)
+    }
+    
+    func drawCards(amount: Int){
+        for _ in 1...amount {
+            model.drawCard()
         }
     }
     
-    func drawCard(){
-        model.drawCard()
+    func selectCard(card: Card){
+        model.selectCard(card: card)
     }
     //MARK:-  Model access
     var cards: [Card] {

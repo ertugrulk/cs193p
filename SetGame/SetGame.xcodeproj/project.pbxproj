@@ -16,6 +16,7 @@
 		603AEE50254B2BE400CFC098 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE4E254B2BE400CFC098 /* GridLayout.swift */; };
 		603AEE53254B2CB800CFC098 /* SetGameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE52254B2CB800CFC098 /* SetGameVM.swift */; };
 		603AEE57254B341500CFC098 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE56254B341500CFC098 /* Grid.swift */; };
+		603AEE5A254B53EE00CFC098 /* CardShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AEE59254B53EE00CFC098 /* CardShapes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		603AEE4E254B2BE400CFC098 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		603AEE52254B2CB800CFC098 /* SetGameVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameVM.swift; sourceTree = "<group>"; };
 		603AEE56254B341500CFC098 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		603AEE59254B53EE00CFC098 /* CardShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShapes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				603AEE4E254B2BE400CFC098 /* GridLayout.swift */,
 				603AEE3A2549871B00CFC098 /* SetGameApp.swift */,
 				603AEE3C2549871B00CFC098 /* SetGameView.swift */,
+				603AEE59254B53EE00CFC098 /* CardShapes.swift */,
 				603AEE4A254B28AA00CFC098 /* SetGame.swift */,
 				603AEE52254B2CB800CFC098 /* SetGameVM.swift */,
 				603AEE3E2549871D00CFC098 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				603AEE3D2549871B00CFC098 /* SetGameView.swift in Sources */,
+				603AEE5A254B53EE00CFC098 /* CardShapes.swift in Sources */,
 				603AEE53254B2CB800CFC098 /* SetGameVM.swift in Sources */,
 				603AEE4B254B28AA00CFC098 /* SetGame.swift in Sources */,
 				603AEE50254B2BE400CFC098 /* GridLayout.swift in Sources */,

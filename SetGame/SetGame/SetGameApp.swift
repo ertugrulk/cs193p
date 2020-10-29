@@ -11,7 +11,8 @@ import SwiftUI
 struct SetGameApp: App {
     var body: some Scene {
         WindowGroup {
-            SetGameView()
+            let vm = SetGameVM()
+            SetGameView(vm: vm)
         }
     }
 }
