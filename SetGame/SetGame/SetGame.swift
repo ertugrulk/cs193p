@@ -55,9 +55,41 @@ struct SetGame{
         return colorSet && numberSet && symbolSet && shadingSet
     }
     
-    mutating func selectCard(card: Card){
+   
+    private func selectedCards() -> [Card] {
+        return dealtCards.filter{ $0.isSelected }
+    }
+
+    private mutating func resetCardSelection() {
+        for card in selectedCards(){
+            modifyCardSelection(card: card, isSelected: false)
+        }
+    }
+    
+    private mutating func removeDealtCards(cards: [Card]){
+        for card in cards {
+            let index = dealtCards.firstIndex(matching: card)!
+            dealtCards.remove(at: index)
+        }
+    }
+    
+    private mutating func modifyCardSelection(card: Card, isSelected: Bool){
         let index = dealtCards.firstIndex(matching: card)!
-        dealtCards[index].isSelected = true
+        dealtCards[index].isSelected = isSelected
+    }
+    
+    mutating func selectCard(card: Card){
+        var selectedCards = self.selectedCards()
+        if selectedCards.count == 3 {
+            resetCardSelection()
+        }
+        modifyCardSelection(card: card, isSelected: true)
+        selectedCards.append(card)
+        if selectedCards.count == 3 {
+            if SetGame.isSet(card1: selectedCards[0], card2: selectedCards[1], card3: selectedCards[2]) {
+                removeDealtCards(cards: selectedCards)
+            }
+        }
     }
 }
 

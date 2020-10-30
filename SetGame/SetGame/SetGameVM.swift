@@ -11,10 +11,10 @@ class SetGameVM: ObservableObject{
     @Published private var model = SetGame() // TODO: not needed?
     
     init(){
-        createGame()
+        startNewGame()
     }
     //MARK:- Intents
-    func createGame(){
+    func startNewGame(){
         model = SetGame()
         drawCards(amount: 12)
     }

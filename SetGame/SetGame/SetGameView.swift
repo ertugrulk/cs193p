@@ -22,11 +22,13 @@ struct SetGameView: View {
             HStack{
                 Spacer()
             Button("New game") {
-                
+                withAnimation {
+                    self.vm.startNewGame()
+                }
             }
                 Spacer()
             Button("Draw 3 cards") {
-                
+                self.vm.drawCards(amount: 3)
             }
                 Spacer()
             }
