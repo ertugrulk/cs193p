@@ -37,13 +37,15 @@ struct SetGame{
         }
     }
     mutating func drawCard() {
-        let card = availableCards.removeFirst() // TODO: Handle empty array
-        dealtCards.append(card)
+        if availableCards.count >= 1 {
+            let card = availableCards.removeFirst()
+            dealtCards.append(card)
+        }
     }
     
     private static func isSetForProperty<T>(_ cond1: T, _ cond2: T, _ cond3: T) -> Bool where T: Equatable {
         let allPropertiesAreTheSame = cond1 == cond2 && cond2 == cond3
-        let allPropertiesDiffer = cond1 != cond2 && cond1 != cond3
+        let allPropertiesDiffer = cond1 != cond2 && cond1 != cond3 && cond2 != cond3
         return allPropertiesDiffer || allPropertiesAreTheSame
     }
     

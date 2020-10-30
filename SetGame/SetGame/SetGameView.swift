@@ -28,10 +28,13 @@ struct SetGameView: View {
             }
                 Spacer()
             Button("Draw 3 cards") {
-                self.vm.drawCards(amount: 3)
+                withAnimation {
+                    self.vm.drawCards(amount: 3)
+                }
             }
                 Spacer()
             }
+            .padding()
         }
     }
 }
@@ -63,12 +66,15 @@ struct SetGameCardView: View{
                     switch(card.symbol){
                     case .diamond:
                             Diamond()
+                                .applyShading(shading: card.shading)
                                 .frame(width: .infinity, height: contentHeight, alignment: .center)
                         case .oval:
                             Capsule()
+                                .applyShading(shading: card.shading)
                                 .frame(width: .infinity, height: contentHeight, alignment: .center)
                         case .squiggle:
                             Circle()
+                                .applyShading(shading: card.shading)
                                 .frame(width: .infinity, height: contentHeight, alignment: .center)
                     }
                 }

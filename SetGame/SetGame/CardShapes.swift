@@ -18,3 +18,21 @@ struct Diamond:Shape{
         return result
     }
 }
+
+
+extension Shape{
+    
+    func applyShading(shading: Card.shading) -> some View{
+        return Group {
+            switch shading {
+            case .open:
+                self.stroke(lineWidth: 3.0).fill()
+            case .solid:
+                self.fill()
+            case .striped:
+                self.fill().opacity(0.3)
+            }
+        }
+    }
+
+}
