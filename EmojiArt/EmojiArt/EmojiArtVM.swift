@@ -8,10 +8,24 @@
 import SwiftUI
 class EmojiArtVM: ObservableObject {
     static let palette: String = "👵🕸✓✅🚲😊"
-    @Published private var emojiArt: EmojiArt = EmojiArt()
+    private var emojiArt: EmojiArt = EmojiArt()
+    {
+        willSet{
+            objectWillChange.send()
+        }
+        didSet{
+            UserDefaults.standard.set(emojiArt.json, forKey: EmojiArtVM.untitled)
+        }
+    }
     
     @Published private(set) var backgroundImage: UIImage?
     
+    init(){
+        emojiArt = EmojiArt(json: UserDefaults.standard.data(forKey: EmojiArtVM.untitled)) ?? EmojiArt()
+        fetchBackgroundImageData()
+    }
+    
+    private static let untitled = "EmojiArtDocument.untitled"
     var emojis: [EmojiArt.Emoji] { emojiArt.emojis}
     
     // MARK: - Intents
@@ -35,10 +49,10 @@ class EmojiArtVM: ObservableObject {
     
     func setBackgroundURL(_ URL: URL?){
         emojiArt.backgroundURL = URL
-        fetcbBackgroundImageData()
+        fetchBackgroundImageData()
     }
     
-    private func fetcbBackgroundImageData(){
+    private func fetchBackgroundImageData(){
         backgroundImage = nil
         if let url = self.emojiArt.backgroundURL {
             DispatchQueue.global(qos: .userInitiated).async {
